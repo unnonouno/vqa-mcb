@@ -9,18 +9,22 @@ import numpy as np
 import os
 from skimage.transform import resize
 
+root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+resnet_root = os.path.join(root, 'resnet_model')
+model_root = root
+
 # constants
 GPU_ID = 3
-RESNET_MEAN_PATH = "../00_data_preprocess/ResNet_mean.binaryproto"
-RESNET_LARGE_PROTOTXT_PATH = "../00_data_preprocess/ResNet-152-448-deploy.prototxt"
-RESNET_CAFFEMODEL_PATH = "/x/daylen/ResNet-152-model.caffemodel"
+RESNET_MEAN_PATH = os.path.join(resnet_root, "ResNet_mean.binaryproto")
+RESNET_LARGE_PROTOTXT_PATH = os.path.join(resnet_root, "ResNet-152-448-deploy.prototxt")
+RESNET_CAFFEMODEL_PATH = os.path.join(resnet_root, "ResNet-152-model.caffemodel")
 EXTRACT_LAYER = "res5c"
 EXTRACT_LAYER_SIZE = (2048, 14, 14)
 TARGET_IMG_SIZE = 448
-VQA_PROTOTXT_PATH = "/x/daylen/saved_models/multi_att_2_glove/proto_test_batchsize1.prototxt"
-VQA_CAFFEMODEL_PATH = "/x/daylen/saved_models/multi_att_2_glove/_iter_190000.caffemodel"
-VDICT_PATH = "/x/daylen/saved_models/multi_att_2_glove/vdict.json"
-ADICT_PATH = "/x/daylen/saved_models/multi_att_2_glove/adict.json"
+VQA_PROTOTXT_PATH = os.path.join(model_root, "multi_att_2_glove/proto_test_batchsize1.prototxt")
+VQA_CAFFEMODEL_PATH = os.path.join(model_root, "multi_att_2_glove/_iter_190000.caffemodel")
+VDICT_PATH = os.path.join(model_root, "multi_att_2_glove/vdict.json")
+ADICT_PATH = os.path.join(model_root, "multi_att_2_glove/adict.json")
 
 ALLOWED_EXTENSIONS = set(['jpg', 'jpeg', 'JPG', 'JPEG', 'png', 'PNG'])
 UPLOAD_FOLDER = './uploads/'
