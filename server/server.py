@@ -21,10 +21,10 @@ RESNET_CAFFEMODEL_PATH = os.path.join(resnet_root, "ResNet-152-model.caffemodel"
 EXTRACT_LAYER = "res5c"
 EXTRACT_LAYER_SIZE = (2048, 14, 14)
 TARGET_IMG_SIZE = 448
-VQA_PROTOTXT_PATH = os.path.join(model_root, "multi_att_2_glove/proto_test_batchsize1.prototxt")
-VQA_CAFFEMODEL_PATH = os.path.join(model_root, "multi_att_2_glove/_iter_190000.caffemodel")
-VDICT_PATH = os.path.join(model_root, "multi_att_2_glove/vdict.json")
-ADICT_PATH = os.path.join(model_root, "multi_att_2_glove/adict.json")
+VQA_PROTOTXT_PATH = os.path.join(model_root, "multi_att_2_glove_pretrained/proto_test_batchsize1.prototxt")
+VQA_CAFFEMODEL_PATH = os.path.join(model_root, "multi_att_2_glove_pretrained/_iter_190000.caffemodel")
+VDICT_PATH = os.path.join(model_root, "multi_att_2_glove_pretrained/vdict.json")
+ADICT_PATH = os.path.join(model_root, "multi_att_2_glove_pretrained/adict.json")
 
 ALLOWED_EXTENSIONS = set(['jpg', 'jpeg', 'JPG', 'JPEG', 'png', 'PNG'])
 UPLOAD_FOLDER = './uploads/'
