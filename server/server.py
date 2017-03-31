@@ -16,7 +16,7 @@ model_root = root
 # constants
 GPU_ID = 3
 RESNET_MEAN_PATH = os.path.join(resnet_root, "ResNet_mean.binaryproto")
-RESNET_LARGE_PROTOTXT_PATH = os.path.join(resnet_root, "ResNet-152-448-deploy.prototxt")
+RESNET_LARGE_PROTOTXT_PATH = os.path.join(resnet_root, "ResNet-152-deploy.prototxt")
 RESNET_CAFFEMODEL_PATH = os.path.join(resnet_root, "ResNet-152-model.caffemodel")
 EXTRACT_LAYER = "res5c"
 EXTRACT_LAYER_SIZE = (2048, 14, 14)
