@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python-dev \
         python-pip \
         python-setuptools \
+        unzip \
     && rm -rf /var/lib/apt/lists/*
 
 ENV CAFFE_ROOT=/opt/caffe
@@ -53,7 +54,6 @@ RUN pip install \
     spacy \
     opencv-python
 
-RUN apt-get update && apt-get install -y unzip
 RUN wget -q -O multi_att_2_glove_pretrained.zip https://www.dropbox.com/s/o19k39lvt5cm0bc/multi_att_2_glove_pretrained.zip?dl=0 && unzip multi_att_2_glove_pretrained.zip
 COPY resnet_model/ResNet_mean.binaryproto /workspace/resnet_model/
 COPY resnet_model/ResNet-152-deploy.prototxt /workspace/resnet_model/
