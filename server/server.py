@@ -1,3 +1,4 @@
+import argparse
 from flask import Flask, request, redirect, url_for, jsonify, send_from_directory
 from time import time
 import cv2
@@ -9,12 +10,16 @@ import numpy as np
 import os
 from skimage.transform import resize
 
+parser = argparse.ArgumentParser()
+parser.add_argument('--gpu', type=int, default=3, help='GPU ID to use')
+args = parser.parse()
+
 root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 resnet_root = os.path.join(root, 'resnet_model')
 model_root = root
 
 # constants
-GPU_ID = 3
+GPU_ID = args.gpu
 RESNET_MEAN_PATH = os.path.join(resnet_root, "ResNet_mean.binaryproto")
 RESNET_LARGE_PROTOTXT_PATH = os.path.join(resnet_root, "ResNet-152-deploy.prototxt")
 RESNET_CAFFEMODEL_PATH = os.path.join(resnet_root, "ResNet-152-model.caffemodel")
