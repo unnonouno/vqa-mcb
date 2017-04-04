@@ -12,7 +12,7 @@ from skimage.transform import resize
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', type=int, default=3, help='GPU ID to use')
-args = parser.parse()
+args = parser.parse_args()
 
 root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 resnet_root = os.path.join(root, 'resnet_model')
