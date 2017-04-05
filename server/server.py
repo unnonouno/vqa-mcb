@@ -12,6 +12,7 @@ from skimage.transform import resize
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--gpu', type=int, default=3, help='GPU ID to use')
+parser.add_argument('--port', '-p', type=int, default=5000, help='Port number')
 args = parser.parse_args()
 
 root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -214,6 +215,7 @@ def upload_question():
 def get_visualization(filename):
     return send_from_directory(VIZ_FOLDER, filename)
 
+
 if __name__ == '__main__':
     setup()
-    app.run(host='0.0.0.0', port=5000, debug=False)
+    app.run(host='0.0.0.0', port=args.port, debug=False)
